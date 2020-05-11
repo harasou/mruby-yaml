@@ -227,15 +227,3 @@ assert('YAML dump double quote') do
   actual = YAML.dump(YAML.load(expected))
   assert_equal expected, actual
 end
-
-assert('YAML dump multi line') do
-  expected = %Q[---\na: |\n  b\n  c\n]
-  actual = YAML.dump(YAML.load(expected))
-  assert_equal expected, actual
-end
-
-assert('YAML dump single line with newline at the end') do
-  expected = %Q[---\na: 'b\n\n  '\n]
-  actual = YAML.dump(YAML.load(expected))
-  assert_equal expected, actual
-end
